@@ -561,7 +561,6 @@ export function QuizGame() {
                 <button key={i} className="rounded-lg border p-4 text-center hover:ring-2 hover:ring-primary transition-all" onClick={() => handleAnswer(i)}>
                   <div className="text-sm font-semibold mb-1">{i % 2 === 0 ? "← " : ""}{String.fromCharCode(65 + i)}{i % 2 === 1 ? " →" : ""}</div>
                   <MiniLineChart points={c.series} width={120} height={50} strokeColor="var(--foreground)" />
-                  <div className="text-sm text-muted-foreground mt-1 truncate">{c.label}</div>
                 </button>
               ))}
             </div>
