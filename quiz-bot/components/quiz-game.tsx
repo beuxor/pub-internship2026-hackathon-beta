@@ -30,7 +30,8 @@ interface AnswerRecord { deck: string; correct: boolean }
 
 type Phase = "splash" | "mode" | "count" | "start" | "loading" | "question" | "moving" | "result" | "finished"
 
-const MOVE_MS = 1650
+const CORRECT_MOVE_MS = 1650
+const WRONG_MOVE_MS = 4000
 
 const DECKS = [
   { value: "all", label: "すべて", emoji: "🎯" },
@@ -339,7 +340,7 @@ export function QuizGame() {
       setPhase("result")
       setShowSql(false)
       setShowDef(false)
-    }, MOVE_MS)
+    }, correct ? CORRECT_MOVE_MS : WRONG_MOVE_MS)
   }
 
   const handleNext = () => {

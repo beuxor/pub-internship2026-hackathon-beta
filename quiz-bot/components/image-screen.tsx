@@ -27,7 +27,7 @@ export function ImageScreen({
           <img
             src={src}
             alt=""
-            className="absolute inset-0 w-full h-full object-contain"
+            className="absolute inset-0 z-0 w-full h-full object-contain pointer-events-none"
             onError={() => setImgFailed(true)}
           />
         )}
@@ -40,7 +40,7 @@ export function ImageScreen({
           <button
             key={i}
             onClick={h.onClick}
-            className="absolute transition-all hover:shadow-[inset_0_0_0_3px_rgba(255,255,255,0.5)] rounded-lg"
+            className="absolute z-20 transition-all hover:shadow-[inset_0_0_0_3px_rgba(255,255,255,0.5)] rounded-lg"
             style={{
               left: h.left, top: h.top, width: h.width, height: h.height,
               boxShadow: h.highlight ? "inset 0 0 0 3px #fbbf24" : undefined,
@@ -48,8 +48,8 @@ export function ImageScreen({
             aria-label={h.label}
           />
         ))}
-        {children && (
-          <div className="absolute inset-0 flex items-center justify-center">
+        {imgFailed && children && (
+          <div className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none">
             {children}
           </div>
         )}

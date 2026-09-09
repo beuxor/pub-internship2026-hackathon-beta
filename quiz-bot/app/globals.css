@@ -303,7 +303,7 @@
 }
 
 .adventure-stage[data-ride-state$="lava"] .adventure-lava-splash {
-  animation: magma-splash 3s ease-in forwards;
+  animation: magma-splash 4s ease-in-out forwards;
 }
 
 .adventure-stage[data-ride-state$="lava"] .adventure-content {
@@ -369,9 +369,9 @@
 }
 
 @keyframes magma-splash {
-  0%, 30% { opacity: 0; transform: scale(0.65); }
-  45% { opacity: 0.94; transform: scale(1.1); }
-  83% { opacity: 0.72; transform: scale(1); }
+  0%, 12% { opacity: 0; transform: scale(0.65); }
+  20% { opacity: 0.94; transform: scale(1.1); }
+  90% { opacity: 0.72; transform: scale(1); }
   100% { opacity: 0; transform: scale(1); }
 }
 
