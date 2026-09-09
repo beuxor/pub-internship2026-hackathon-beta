@@ -506,3 +506,7 @@
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
 }
+
+/* 14:48 本人指示：レインボーモードの背景の虹を消す（パロット・見出し・バッジは残す） */
+.rainbow-bg-overlay { display: none !important; animation: none !important; }
+.rainbow-mode { background: none !important; animation: none !important; filter: none !important; }
